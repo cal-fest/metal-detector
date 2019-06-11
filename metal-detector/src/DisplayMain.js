@@ -3,7 +3,14 @@ import AlbumBox from "./AlbumBox";
 
 
 const DisplayMain = props => (
-  <div>
+  <div className="display-main">
+    <AlbumBox />
+    <AlbumBox />
+    <AlbumBox />
+    <AlbumBox />
+    <AlbumBox />
+    <AlbumBox />
+    <AlbumBox />
     <AlbumBox />
   </div>
 )

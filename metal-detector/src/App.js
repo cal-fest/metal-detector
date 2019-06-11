@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <header className="App-header">
-        <DisplayMain />
+      {/* <header className="App-header">
 
-      </header>
+      </header> */}
+      <DisplayMain />
     </div>
   );
 }
