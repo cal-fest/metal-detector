@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Nav from "./Nav";
 import DisplayMain from './DisplayMain';
-import AlbumBox from './AlbumBox';
 
 function App() {
   return (

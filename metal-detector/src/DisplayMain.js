@@ -5,10 +5,6 @@ import AlbumBox from "./AlbumBox";
 const DisplayMain = props => (
   <div>
     <AlbumBox />
-    <AlbumBox />
-    <AlbumBox />
-    <AlbumBox />
-    <AlbumBox />
   </div>
 )
 
