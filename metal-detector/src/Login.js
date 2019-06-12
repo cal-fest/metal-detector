@@ -1,5 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+const axios = require('axios');
+
 
 
 class Login extends React.Component {
@@ -33,11 +35,27 @@ class Login extends React.Component {
 		if (username.length === 0 || password.length === 0) {
 			alert('Please enter a username and password!')
 		}
-		if (username === 'alyvia' && password === "password") {
-			this.setState({
-				verified: true
+		axios('http://localhost:8080/verifylogin', {
+			method: 'POST',
+			data: {
+				username: username,
+				password: password
+			}
+		})
+			.then(res => {
+				console.log('this is res ', res)
+				if (res.data === true) {
+					console.log('THIS IS RES')
+					this.setState({
+						verified: true
+					})
+				} else {
+					window.alert('Username or Password Incorrect')
+				}
 			})
-		}
+			.catch(err => {
+				console.log('err in axios post', err)
+			})
 	};
 
 	redirectToSignup() {
