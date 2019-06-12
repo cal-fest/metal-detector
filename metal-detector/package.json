@@ -8,6 +8,7 @@
     "cookie-parser": "^1.4.4",
     "pg": "^7.11.0",
     "react": "^16.8.6",
+    "react-app-rewire-styled-components": "^3.0.2",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
