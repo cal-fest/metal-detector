@@ -1,38 +1,19 @@
 body {
-  background-color: white;
+  margin: 0;
+color: white;
+  padding: 0;
+  font-family: "Germania One", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/*
-
-Route.js
-
-.navbar
-
-*/
-
-/*
-
-Login.js
-
-.login
-#username
-#password
-#loginButton
-
-*/
-
-/*
-
-Favorites.js
-
-#welcomeMessage
-
-*/
-
-/*
-
-Signout.js
-
-#signoutMessage
-
-*/
+a {
+  color: white;
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
