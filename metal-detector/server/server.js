@@ -22,10 +22,6 @@ app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }), cookiePars
 
 app.post('/albums', albumController.getAlbums, dbController.insertAlbum, (req, res) => res.send('this is working'))
 
-app.post('/', dbController.insertUser, (req, res) => res.send('sending'))
-
-app.post('/createUser', (req, res) => {
-	console.log('Req.body', req.body)
-})
+app.post('/', dbController.insertUser, (req, res) => res.send(res.locals.created))
 
 app.listen(PORT, () => console.log('listening right hurrr on PORT 3000'))
