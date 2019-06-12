@@ -11,7 +11,7 @@ module.exports = {
         console.log('err is', err);
         res.sendStatus(404);
       } else {
-        res.locals.created = true
+        res.locals.created = true;
         return next();
       }
     })
