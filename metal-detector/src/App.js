@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+const axios = require('axios');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//main home page, will render all album covers
+//search bar organized by params
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { key: 'value' }
+  }
+  // componentDidMount() {
+  //   //fetch album covers from server
+  //   axios.get('/getalbumcovers')
+  //     .then(res => {
+  //       console.log('in res')
+  //       console.log('this is my response', res)
+  //     })
+  //     .catch(err => {
+  //       console.log('in err')
+  //       console.log('this is my err', err)
+  //     })
+  // }
+  render() {
+    return (
+      <div>
+        Welcome to da Tunes!
+      </div>
+    )
+  }
 }
 
 export default App;
