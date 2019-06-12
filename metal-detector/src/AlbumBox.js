@@ -5,7 +5,6 @@ class AlbumBox extends React.Component {
     super(props);
     this.state = { isToggleOn: false };
     this.handleClick = this.handleClick.bind(this);
-
   }
   handleClick(e) {
     const albumBox = e.target;
@@ -15,12 +14,8 @@ class AlbumBox extends React.Component {
       albumBox.style.backgroundColor = 'white' :
       albumBox.style.backgroundColor = 'black';
     // albumBox.style.color = 'lime';
-
-
     let firstRect = albumBox.getBoundingClientRect();
     // let lastRect = detailItem.getBoundingClientRect();
-
-
 
   }
   render() {
