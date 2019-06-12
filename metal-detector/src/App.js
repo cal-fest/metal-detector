@@ -8,7 +8,10 @@ const axios = require('axios');
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { dbData: [] }
+    this.state = {
+      dbData: [],
+      eightData: []
+    }
   }
 
   componentDidMount() {

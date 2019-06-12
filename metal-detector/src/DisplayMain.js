@@ -3,20 +3,13 @@ import AlbumBox from "./AlbumBox";
 
 
 const DisplayMain = props => {
-  let renderArr = [];
-  const covers = props.albumCovers
-  let minNum = 0;
-  let maxNum = 8;
 
-  console.log('renderArr', renderArr)
-
-
-  // const covers = props.albumCovers.map(obj =>
-  //   <AlbumBox src={obj.album_artwork} alt={'album cover'} />
-  // )
+  const covers = props.albumCovers.map(obj =>
+    <AlbumBox key={obj.id} src={obj.album_artwork} alt={'album cover'} />
+  )
   return (
     < div className="display-main" >
-      {renderArr}
+      {covers}
     </div >
   )
 }
