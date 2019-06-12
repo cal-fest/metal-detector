@@ -6,8 +6,7 @@ const cookieParser = require('cookie-parser');
 const axios = require('axios')
 const dbController = require('./controllers/dbController')
 const albumController = require('./controllers/albumController')
-const loginController = require('./controllers/loginController');
-
+const loginController = require('./controllers/loginController')
 
 const PORT = 8080;
 
@@ -24,5 +23,6 @@ app.post('/albums', albumController.getAlbums, dbController.insertAlbum, (req, r
 app.post('/', dbController.insertUser, (req, res) => res.send(res.locals.created))
 
 app.post('/verifylogin', loginController.verifyUser, (req, res) => res.send(res.locals.verifyLogin))
+
 
 app.listen(PORT, () => console.log('listening right hurrr on PORT 3000'))
