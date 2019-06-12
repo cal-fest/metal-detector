@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
 const axios = require('axios');
 
 //main home page, will render all album covers
@@ -23,7 +24,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        Welcome to da Tunes!
+        <Nav />
+        {/* hello */}
       </div>
     )
   }
