@@ -16,7 +16,7 @@ h1 {
 }
 .App-header {
   /* min-height: 100vh; */
-  /* display: flex; */
+  display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
@@ -33,17 +33,17 @@ text-align: center;
 padding-bottom: 10px;
 }
 .fill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     overflow: hidden;
-     max-height: 300px;
-     max-width: 300px;
-    }
-    .fill img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    overflow: hidden;
+    max-height: 300px;
+    max-width: 300px;
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
 }
 .album-art {
   max-height: 300px;
@@ -52,9 +52,7 @@ padding-bottom: 10px;
   justify-content: center;
   align-content: center;
 }
-.test {
-  padding: 20px;
-}
+
 .display-main {
   display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;
