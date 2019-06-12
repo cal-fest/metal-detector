@@ -31,7 +31,7 @@ class Login extends React.Component {
 	//in verifyLogin, I will send a post request to my server attaching username and password, depnding on response from server route to Favorites
 	verifyLogin(username, password) {
 		if (username.length === 0 || password.length === 0) {
-			alert('Must enter a username and password!')
+			alert('Please enter a username and password!')
 		}
 		if (username === 'alyvia' && password === "password") {
 			this.setState({
