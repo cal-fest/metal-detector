@@ -30,7 +30,7 @@ h1 {
 
 .navbar {
 text-align: center;
-padding-bottom: 10px;
+padding-bottom: 0px;
 }
 .fill {
   display: flex;

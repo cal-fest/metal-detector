@@ -8,25 +8,29 @@ const axios = require('axios');
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { key: 'value' }
+    this.state = { dbData: [] }
   }
-  // componentDidMount() {
-  //   //fetch album covers from server
-  //   axios.get('/getalbumcovers')
-  //     .then(res => {
-  //       console.log('in res')
-  //       console.log('this is my response', res)
-  //     })
-  //     .catch(err => {
-  //       console.log('in err')
-  //       console.log('this is my err', err)
-  //     })
-  // }
+
+  componentDidMount() {
+    axios('http://localhost:8080/albums', {
+      method: 'GET'
+    })
+      .then(res => {
+        this.setState({
+          dbData: res.data.rows
+        })
+      })
+      .catch(err => {
+        console.log('Error in axios get for art')
+      })
+  }
+
   render() {
+    const albumCovers = this.state.dbData;
     return (
       <div className="main">
         <Nav />
-        <DisplayMain />
+        <DisplayMain albumCovers={albumCovers} />
       </div>
     )
   }
