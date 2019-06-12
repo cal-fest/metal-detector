@@ -1,4 +1,4 @@
-const createDB = require ('../models/dbModel')
+const createDB = require('../models/dbModel')
 
 module.exports = {
 
@@ -6,12 +6,12 @@ module.exports = {
     const pool = createDB();
     const insertUserQuery = 'INSERT INTO users_table (first_name, last_name, username, password) VALUES ($1, $2, $3, $4)';
     const usersArray = [req.body.first_name, req.body.last_name, req.body.username, req.body.password]
-    pool.query(insertUserQuery, usersArray ,(err, result) => {
-      if(err) {
+    pool.query(insertUserQuery, usersArray, (err, result) => {
+      if (err) {
         console.log('err is', err);
         res.sendStatus(404);
       } else {
-        console.log('successfully added user to DB')
+        res.locals.created = true;
         return next();
       }
     })
@@ -30,7 +30,7 @@ module.exports = {
 
     albumsArray.forEach((album) => {
       pool.query(insertAlbumQuery, album, (err, result) => {
-        if(err) {
+        if (err) {
           console.log('what is the error')
           res.sendStatus(404)
         } else {

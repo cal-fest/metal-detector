@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 const axios = require('axios');
 
 class Signup extends Component {
@@ -9,6 +10,7 @@ class Signup extends Component {
 			lastName: "",
 			username: "",
 			password: "",
+			created: false,
 		}
 		this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
 		this.handleLastNameChange = this.handleLastNameChange.bind(this);
@@ -43,18 +45,26 @@ class Signup extends Component {
 
 	createAccount() {
 		const { firstName, lastName, username, password } = this.state;
-		console.log('this is firstname', firstName)
-		axios('http://localhost:8080/createuser', {
+		if (!firstName.length || !lastName.length || !username.length || !password.length) {
+			window.alert('One of the fields you entered is incorrect');
+		};
+		axios('http://localhost:8080/', {
 			method: 'POST',
 			data: {
-				firstName: firstName,
-				lastName: lastName,
+				first_name: firstName,
+				last_name: lastName,
 				username: username,
 				password: password
 			}
 		})
 			.then(res => {
-				console.log('res', res)
+				if (res.data === true) {
+					this.setState({
+						created: true
+					})
+				} else {
+					window.alert('We apologize something went wrong! Please sign up again')
+				}
 			})
 			.catch(err => {
 				console.log('err in axios post', err)
@@ -62,6 +72,15 @@ class Signup extends Component {
 	};
 
 	render() {
+		if (this.state.created) {
+			return <Redirect to={{
+				pathname: "/myfavorites",
+				state: {
+					username: this.state.username,
+					verified: true
+				}
+			}} />
+		}
 		return (
 			<div>
 				<div className="signup">
