@@ -11,7 +11,7 @@ module.exports = {
         console.log('err is', err);
         res.sendStatus(404);
       } else {
-        console.log('successfully added user to DB')
+        res.locals.created = true; 
         return next();
       }
     })
