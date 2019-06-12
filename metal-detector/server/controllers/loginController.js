@@ -10,7 +10,6 @@ module.exports = {
       if (err) {
         console.log('error in loginController', err)
       } else {
-        console.log('GOOD TO GO')
         res.locals.verifyLogin = true;
         return next();
       }
