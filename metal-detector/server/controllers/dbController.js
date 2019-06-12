@@ -2,48 +2,46 @@ const createDB = require ('../models/dbModel')
 
 module.exports = {
 
-  initializeDatabase: (req, res, next) => {
+  insertUser: (req, res, next) => {
     const pool = createDB();
-    const query = `CREATE TABLE IF NOT EXISTS users_table (
-      user_id SERIAL PRIMARY KEY,
-      "firstName" text,
-      "lastName" text,
-      "userName" text,
-      password character varying,
-      favorites bytea
-    ) `;
-    `CREATE TABLE albums_table (
-      id SERIAL PRIMARY KEY,
-      album_artwork bytea,
-      artist_name text,
-      album_name text,
-      release_date character varying
-  )`;
-  `CREATE TABLE favorites_tables (
-    user_id integer REFERENCES users_table(user_id),
-    item_id integer REFERENCES albums_table(id)
-);`
-    pool.query(query, (err, result) => {
+    const insertUserQuery = 'INSERT INTO users_table (first_name, last_name, username, password) VALUES ($1, $2, $3, $4)';
+    const usersArray = [req.body.first_name, req.body.last_name, req.body.username, req.body.password]
+    pool.query(insertUserQuery, usersArray ,(err, result) => {
       if(err) {
         console.log('err is', err);
         res.sendStatus(404);
       } else {
-        console.log('connected successfully to Database')
+        console.log('successfully added user to DB')
         return next();
       }
     })
   },
+  insertAlbum: (req, res, next) => {
+    const pool = createDB();
+    const insertAlbumQuery = 'INSERT INTO albums_table (album_artwork, artist_name, album_name, release_date) VALUES ($1, $2, $3, $4)';
+    const albumsArray = res.locals.albumData.map((el) => {
+      console.log('el is ', el)
+      console.log('the values are', Object.values(el))
+      return Object.values(el)
+    })
+    // [res.locals.albumData.album_artwork, res.locals.albumData.artist_name, res.locals.albumData.album_name, res.locals.albumData.release_date]
 
+    console.log('albumsArray is ', albumsArray)
 
-  
+    albumsArray.forEach((album) => {
+      pool.query(insertAlbumQuery, album, (err, result) => {
+        if(err) {
+          console.log('what is the error')
+          res.sendStatus(404)
+        } else {
+          console.log('successfully inserted albums into database')
+          return next();
+        }
+      })
+
+    })
+
+  }
+
 
 }
-
-// pool.query(query) 
-//   .then(res => {
-//     console.log('db has been created')
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   })
-//   return next()
