@@ -5,7 +5,7 @@ module.exports = { getAlbums: (req, res, next) => {
   
   axios.get("https://api.spotify.com/v1/albums", {
     headers: {
-      'Authorization': 'Bearer BQDy9bb4Z99WcojMojBJ_Fss6HtcedH80Pe6K8QmZhfGw4FSoJVcATDL1frsVXLLutC8P7YvyFB1YOlieMI',
+      'Authorization': 'Bearer BQDWxRiNYk94WmMADXK0nzecLvoeRrPZYmcOguG0oXnuQdb5KieCZaPuOu5D3tjfXyfowtpiXnWtWT3dLi0',
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
@@ -15,10 +15,10 @@ module.exports = { getAlbums: (req, res, next) => {
   })
     .then((myData) => {
       res.locals.albumData = myData.data.albums.map((el) => ({
-        image: el.images[0].url,
-        release_date: el.release_date,
+        album_artwork: el.images[0].url,
         artist_name: el.artists[0].name,
-        album_name: el.name
+        album_name: el.name,
+        release_date: el.release_date
       }))
       return next();
     })

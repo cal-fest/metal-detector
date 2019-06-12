@@ -12,10 +12,12 @@ const PORT = 3000;
 
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }), cookieParser());
 
-app.get('/', albumController.getAlbums, (req, res) => res.send(res.locals.albumData))
+//app.get('/', albumController.getAlbums, (req, res) => res.send(res.locals.albumData))
 
-app.post('/', dbController.initializeDatabase, (req, res) => res.send('sending'))
+app.post('/albums', albumController.getAlbums, dbController.insertAlbum, (req, res) => res.send('this is working'))
 
-app.post('/createUser', (req, res) => console.log(req.body))
+app.post('/', dbController.insertUser, (req, res) => res.send('sending'))
+
+//app.post('/createUser', (req, res) => console.log(req.body))
 
 app.listen(PORT, () => console.log('listening right hurrr on PORT 3000'))
