@@ -79,13 +79,16 @@ class Login extends React.Component {
 			< div >
 				<div className="login">
 					<form onSubmit={this.handleSubmit}>
-						<label>Username</label>
+						<label>Username </label>
 						<input id="username" type="text" placeholder="user" onChange={this.handleUserChange}></input>
-						<label>Password</label>
+						<br />
+						<label>Password </label>
 						<input id="password" type="password" placeholder="password" onChange={this.handlePassChange}></input>
+						<br />
+						<button id="loginButton" style={{ display: 'inline-block', width: '200', height: '50%' }} onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
+						<br />
+						<button id="signupButton" style={{ display: 'inline-block', width: '200', height: '50%' }} onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
 					</form>
-					<button id="loginButton" onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
-					<button id="signupButton" onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
 				</div>
 			</div >
 		)
