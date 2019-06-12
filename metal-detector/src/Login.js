@@ -43,7 +43,9 @@ class Login extends React.Component {
 			}
 		})
 			.then(res => {
+				console.log('this is res ', res)
 				if (res.data === true) {
+					console.log('THIS IS RES')
 					this.setState({
 						verified: true
 					})
