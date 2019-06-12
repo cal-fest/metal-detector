@@ -1,5 +1,5 @@
 import React from "react";
-
+import './App.css';
 class AlbumBox extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +21,8 @@ class AlbumBox extends React.Component {
   render() {
     return (
       <div className="album-art" onMouseDown={(e) => this.handleClick(e)}>
-        <h1>AlbumBox</h1>
+        {/* <h1>AlbumBox</h1> */}
+        <img className="fill" src="http://i.imgur.com/FAU9nYw.jpg" />
       </div >
     )
   }
