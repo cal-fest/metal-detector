@@ -1,8 +1,9 @@
 const axios = require('axios')
-module.exports = { getAlbums: (req, res, next) => {
-  //api fetch request here 
-  //console.log the response for seeing in command line or res.send it to see in postman
-  
+const createDB = require('../models/dbModel')
+
+module.exports = { 
+  getAlbums: (req, res, next) => {
+
   axios.get("https://api.spotify.com/v1/albums", {
     headers: {
       'Authorization': 'Bearer BQBfcYJTM-O3cC4o4r5ohFTUx6Qd8Q-ySVjDk9I_fgvCKnunoiJd_vcsKRW31YINf7vUeRMJj4-tSwSibKQ',
@@ -25,7 +26,22 @@ module.exports = { getAlbums: (req, res, next) => {
     .catch((err) => {
       console.log('there is an error')
     })
-  } 
+  }, 
+  getAlbumArt: (req, res, next) => {
+    console.log('inside of getAlbumArt');
+    const pool = createDB();
+    const getAlbumArtQuery = 'SELECT * FROM albums_table';
+    const getAlbumArtArray = [req.body.album_artwork, req.body.artist_name, req.body.album_name, req.body.release_date];
+    pool.query(getAlbumArtQuery, getAlbumArtArray, (err, result) => {
+      if(err){
+        console.log('there is an error at getAlbumArt in albumController', err)
+      } else{
+        console.log('successfully retrieving albumart from DB');
+        res.locals.albumArt = true;
+        return next();
+      }
+    })
+  }
 }
 
 
