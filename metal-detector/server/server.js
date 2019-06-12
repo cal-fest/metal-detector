@@ -22,6 +22,7 @@ app.post('/albums', albumController.getAlbums, dbController.insertAlbum, (req, r
 
 app.post('/', dbController.insertUser, (req, res) => res.send(res.locals.created))
 
-app.post('/verifylogin', loginController.verifyUser, (req,res) => res.send(res.locals.verifyLogin))
+app.post('/verifylogin', loginController.verifyUser, (req, res) => res.send(res.locals.verifyLogin))
+
 
 app.listen(PORT, () => console.log('listening right hurrr on PORT 3000'))

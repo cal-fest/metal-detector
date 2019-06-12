@@ -1,7 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-const axios = require('axios')
-
+import { Redirect } from 'react-router-dom'
+import axios from 'axios';
 
 class Login extends React.Component {
 	constructor(props) {
