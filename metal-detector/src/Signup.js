@@ -43,6 +43,22 @@ class Signup extends Component {
 
 	createAccount() {
 		const { firstName, lastName, username, password } = this.state;
+		console.log('this is firstname', firstName)
+		axios('http://localhost:8080/createuser', {
+			method: 'POST',
+			data: {
+				firstName: firstName,
+				lastName: lastName,
+				username: username,
+				password: password
+			}
+		})
+			.then(res => {
+				console.log('res', res)
+			})
+			.catch(err => {
+				console.log('err in axios post', err)
+			})
 	};
 
 	render() {
