@@ -4,12 +4,24 @@ body {
   margin: 0;
   padding: 0;
 }
-.main, .login, .signup {
+button {
+  margin: 4px;
+  font-family : inherit;
+  font-size: 1rem;
+}
+.middle {
+  margin-top: 100px;;
+}
+.main, .login, .signup, #welcomeMessage, #signoutMessage {
   text-align: center;
   display: grid;
   grid-template-rows: 1.3fr 9fr;
 }
 a {
+  font-size: 4rem;
+}
+
+label {
   font-size: 4rem;
 }
 h1 {

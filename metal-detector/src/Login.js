@@ -75,17 +75,20 @@ class Login extends React.Component {
 		}
 		return (
 			< div >
-				<div className="login">
+				<div className="login middle">
 					<form onSubmit={this.handleSubmit}>
 						<label>Username </label>
-						<input id="username" type="text" placeholder="user" onChange={this.handleUserChange}></input>
-						<br />
+						<input id="username" style={{
+							display: 'inline-block', height: '30px', width: '300px'
+						}} type="text" placeholder="user" onChange={this.handleUserChange}></input>
+						< br />
 						<label>Password </label>
-						<input id="password" type="password" placeholder="password" onChange={this.handlePassChange}></input>
+						<input id="password" style={{ display: 'inline-block', width: '300px', height: '30px', }} type="password" placeholder="password" onChange={this.handlePassChange}></input>
 						<br />
-						<button id="loginButton" style={{ display: 'inline-block', width: '200', height: '50%' }} onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
 						<br />
-						<button id="signupButton" style={{ display: 'inline-block', width: '200', height: '50%' }} onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
+						<button id="loginButton" style={{ display: 'inline-block', width: '100px', height: '30px' }} onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
+						<br />
+						<button id="signupButton" style={{ display: 'inline-block', width: '100px', height: '30px' }} onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
 					</form>
 				</div>
 			</div >
