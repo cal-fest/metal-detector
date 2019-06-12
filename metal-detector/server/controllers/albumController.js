@@ -5,12 +5,12 @@ module.exports = { getAlbums: (req, res, next) => {
   
   axios.get("https://api.spotify.com/v1/albums", {
     headers: {
-      'Authorization': 'Bearer BQDWxRiNYk94WmMADXK0nzecLvoeRrPZYmcOguG0oXnuQdb5KieCZaPuOu5D3tjfXyfowtpiXnWtWT3dLi0',
+      'Authorization': 'Bearer BQBfcYJTM-O3cC4o4r5ohFTUx6Qd8Q-ySVjDk9I_fgvCKnunoiJd_vcsKRW31YINf7vUeRMJj4-tSwSibKQ',
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
     params: {
-      ids: '4JECM4NZhtpjDX4JbYkh00,5NGFaarv4KxVYH9LvaMLso,2YRQAB7xwiQOITZxPTtEJ4,3seMsCJKEsXwzX3LdZCq8W,2l1FXDBga9lzRLL2pcoUfF,4sFl8rKwGv46YI64fwGVKp,7HeOApPwPNQit4zyEPPlUX,7mKKb28AyyEkEqqKxsgZN7,62P7Dy1U56YzWR8DUPLlEp,2pQXNhYA1Fhu5pZsMYmdEw,5x6diJ9b9RVnFlG0B4Hege,0d16ZSrhLxXqJUF8ZIOkzr,0Y0ePzJHJBkqbepJUqGHA3,0949gSxHofxIpOQULQfKR4,7weVNJpOYNUITCk7gIgA6R,24gRsXvlxHcVrYLO4IXmDa,3NRgb4H8l4f3Nq7MLBXaQj,7CbYOYN29usgRiHKWXLDS8,2nr1TUKAZTk7bG5eGOAKvR,0S31HiObTrGrk0AHHvUMa0'
+      ids: '5IfUUKQ5lOfWlLOPJyxL2r,3HkxiSSIxRaT5HaIFR9NDN,7ckjkkVbGQXYuEdfErmRfC,6OmUwiZBss5csDAD3IAhdD,0SZg95nceCBL5G2THZihSA,49jPlzh1ctzrab4wQAJ4Jz,0gNBSnkiibRqyFzCJJ5fka,1zu0hVMxzCynLQg4wOIjAr,1Ya3cdZqOaAq9z6A7Opynn,744fJG2zZzS38VmeH8y6SV,02ruMAFomHbsWqPKnM7tj8,0ivjIcmCCFhtVOwKlNFzLC,0svoIboyRzqgRpvBDbJtUE,3UWCxgDWzIiKL9a1aRSOLN,3jsUccThnafgtLme5SZoD0,5lA39QwGv0zgi1oYjG2hXK,3ffdUrEvCQJX6mn2ZTq93m,3IAW2HAqOp7tKXelk3UAnH,6kBL1aDG9vrc4pFhgcqMSJ,2UrfoKnM0Wu6MSH0tx79ux'
     }
   })
     .then((myData) => {
