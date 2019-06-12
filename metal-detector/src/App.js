@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
+import DisplayMain from './DisplayMain';
 const axios = require('axios');
 
 //main home page, will render all album covers
@@ -23,9 +24,10 @@ class App extends Component {
   // }
   render() {
     return (
-      <div>
+      <div className="main">
         <Nav />
         {/* hello */}
+        <DisplayMain />
       </div>
     )
   }

@@ -1,14 +1,17 @@
- body {
+.main {
   text-align: center;
   color: white;
   display: grid;
-  grid-template-rows: 1fr 12fr;
-  margin: 0;
+  grid-template-rows: 1.3fr 9fr;
+    margin: 0;
   padding: 0;
   background-color: black;
 }
 
-
+h1 {
+  margin: 0;
+  font-size: 3rem;
+}
 .App-header {
   /* min-height: 100vh; */
   /* display: flex; */
@@ -25,6 +28,7 @@
 
 .navbar {
 text-align: center;
+padding-bottom: 10px;
 }
 
 .album-art {
