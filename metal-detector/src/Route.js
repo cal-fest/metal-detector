@@ -4,6 +4,7 @@ import App from './App';
 import Favorites from './Favorites';
 import Login from './Login';
 import Signout from './Signout';
+import Signup from './Signup'
 
 class Root extends Component {
 	render() {
@@ -25,6 +26,7 @@ class Root extends Component {
 					<Route exact path="/myfavorites" component={Favorites} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/signout" component={Signout} />
+					<Route exact path="/signup" component={Signup} />
 				</Router>
 			</div>
 		)
