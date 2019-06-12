@@ -18,9 +18,11 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }), cookieParser());
 
-app.get('/', albumController.getAlbums, (req, res) => res.send(res.locals.albumData))
+//app.get('/', albumController.getAlbums, (req, res) => res.send(res.locals.albumData))
 
-app.post('/', dbController.initializeDatabase, (req, res) => res.send('sending'))
+app.post('/albums', albumController.getAlbums, dbController.insertAlbum, (req, res) => res.send('this is working'))
+
+app.post('/', dbController.insertUser, (req, res) => res.send('sending'))
 
 app.post('/createUser', (req, res) => {
 	console.log('Req.body', req.body)

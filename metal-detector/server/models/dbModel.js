@@ -4,7 +4,7 @@ const { myURI } = require('../config')
 const createDB = (req, res) => {
   return new Pool({
     connectionString: myURI,
-    max: 5,
+    max: 4,
   })
 }
 
