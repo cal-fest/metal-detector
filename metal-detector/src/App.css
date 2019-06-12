@@ -1,11 +1,13 @@
-.main {
-  text-align: center;
+body {
+  background-color: black;
   color: white;
+  margin: 0;
+  padding: 0;
+}
+.main, .login, .signup {
+  text-align: center;
   display: grid;
   grid-template-rows: 1.3fr 9fr;
-    margin: 0;
-  padding: 0;
-  background-color: black;
 }
 
 h1 {
@@ -30,15 +32,29 @@ h1 {
 text-align: center;
 padding-bottom: 10px;
 }
-
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     overflow: hidden;
+     max-height: 300px;
+     max-width: 300px;
+    }
+    .fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
 .album-art {
-  height: 300px;
-  width: 300px;
+  /* max-height: 300px; */
+  /* max-width: 300px; */
   grid-column: span 1;
   justify-content: center;
   align-content: center;
 }
-
+.test {
+  padding: 20px;
+}
 .display-main {
   display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr;

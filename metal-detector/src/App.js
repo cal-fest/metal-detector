@@ -26,7 +26,6 @@ class App extends Component {
     return (
       <div className="main">
         <Nav />
-        {/* hello */}
         <DisplayMain />
       </div>
     )
