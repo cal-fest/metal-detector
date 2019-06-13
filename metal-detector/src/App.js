@@ -6,12 +6,9 @@ const axios = require('axios');
 //main home page, will render all album covers
 //search bar organized by params
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dbData: [],
-      eightData: []
-    }
+  state = {
+    dbData: [],
+    eightData: []
   }
 
   componentDidMount() {

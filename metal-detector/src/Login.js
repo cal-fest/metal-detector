@@ -1,21 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
 
-class Login extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			username: '',
-			password: '',
-			verified: false,
-			createUser: false,
-		}
-		this.handleUserChange = this.handleUserChange.bind(this);
-		this.handlePassChange = this.handlePassChange.bind(this);
-		this.verifyLogin = this.verifyLogin.bind(this);
-		this.redirectToSignup = this.redirectToSignup.bind(this);
+class Login extends Component {
+	state = {
+		username: '',
+		password: '',
+		verified: false,
+		createUser: false,
 	}
+	handleUserChange = this.handleUserChange.bind(this);
+	handlePassChange = this.handlePassChange.bind(this);
+	verifyLogin = this.verifyLogin.bind(this);
+	redirectToSignup = this.redirectToSignup.bind(this);
 
 	handleUserChange(event) {
 		this.setState({
@@ -41,6 +38,7 @@ class Login extends React.Component {
 			}
 		})
 			.then(res => {
+				console.log('res', res)
 				if (res.data === true) {
 					this.setState({
 						verified: true
