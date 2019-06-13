@@ -33,6 +33,10 @@ h1 {
   margin: 0;
   font-size: 12rem;
 }
+h2{
+  font-size: 2rem;
+}
+
 .App-header {
   /* min-height: 100vh; */
   display: flex;
