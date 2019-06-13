@@ -4,12 +4,12 @@ import AlbumBox from "./AlbumBox";
 
 const DisplayMain = props => {
 
-  const covers = props.albumCovers.map(obj =>
-    <AlbumBox key={obj.id} src={obj.album_artwork} alt={'album cover'} />
+  const albumInfo = props.albumData.map(obj =>
+    <AlbumBox key={obj.id} artistName={obj.artist_name} albumName={obj.album_name} releaseDate={obj.release_date} src={obj.album_artwork} alt={'album cover'} />
   )
   return (
     < div className="display-main" >
-      {covers}
+      {albumInfo}
     </div >
   )
 }

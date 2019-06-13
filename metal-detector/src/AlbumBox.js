@@ -43,7 +43,7 @@ class AlbumBox extends React.Component {
             translateX(0)
             translateY(0)
             scale(1)
-           ` } ],
+           ` }],
 
       {
         duration: 600,
@@ -112,7 +112,9 @@ class AlbumBox extends React.Component {
             />
           </div>
           <div className="flip-card-back">
-            <p>help!</p>
+            <p>Album Name: {this.props.albumName}</p>
+            <p>Artist Name: {this.props.artistName}</p>
+            <p>Release Data: {this.props.releaseDate}</p>
           </div>
         </div>
       </div >

@@ -8,7 +8,6 @@ const axios = require('axios');
 class App extends Component {
   state = {
     dbData: [],
-    eightData: []
   }
 
   componentDidMount() {
@@ -26,11 +25,11 @@ class App extends Component {
   }
 
   render() {
-    const albumCovers = this.state.dbData;
+    const albumData = this.state.dbData;
     return (
       <div className="main">
         {/* <Nav /> */}
-        <DisplayMain albumCovers={albumCovers} />
+        <DisplayMain albumData={albumData} />
       </div>
     )
   }
