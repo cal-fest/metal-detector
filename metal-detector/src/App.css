@@ -33,6 +33,10 @@ h1 {
   margin: 0;
   font-size: 12rem;
 }
+h2{
+  font-size: 2rem;
+}
+
 .App-header {
   /* min-height: 100vh; */
   display: flex;
@@ -94,7 +98,7 @@ padding-bottom: 45px;
 }
 
 .flip-card-back {
-  background-image: url("https://image.freepik.com/free-photo/dirty-metal-texture_1048-4784.jpg");
+  background-image: url("https://image.freepik.com/free-photo/dark-grunge-texture_1048-4055.jpg?1");
   color: white;
   transform: rotateY(180deg);
 }

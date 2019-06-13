@@ -82,7 +82,7 @@ class Login extends Component {
 						}} type="text" placeholder="Who are you?!" onChange={this.handleUserChange} autofocus="true"></input>
 						< br />
 						<label>Password </label>
-						<input id="password" style={{ display: 'inline-block', width: '300px', height: '30px', }} type="password" placeholder="What" onChange={this.handlePassChange} ></input>
+						<input id="password" style={{ display: 'inline-block', width: '300px', height: '30px', }} type="password" placeholder="Why are you here?" onChange={this.handlePassChange} ></input>
 						<br />
 						<br />
 						<button id="loginButton" style={{ display: 'inline-block', width: '100px', height: '30px' }} onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
