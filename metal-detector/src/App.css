@@ -4,11 +4,11 @@ body {
   margin: 0;
   padding: 0;
 }
-/* ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder { 
   color: pink;
   font-family : "Germania One";
   font-size: 1rem;
-} */
+} 
 button {
   margin: 4px;
   font-family : inherit;
@@ -23,7 +23,7 @@ button {
   grid-template-rows: 1.3fr 9fr;
 }
 a {
-  font-size: 4rem;
+  font-size: 4rem; 
 }
 
 label {
