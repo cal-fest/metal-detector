@@ -43,7 +43,7 @@ class AlbumBox extends React.Component {
             translateX(0)
             translateY(0)
             scale(1)
-           ` }],
+           ` } ],
 
       {
         duration: 600,
@@ -106,7 +106,7 @@ class AlbumBox extends React.Component {
           className="fill"
           src={this.props.src}
           onMouseDown={(e) => this.handleClick(e)}
-          alt=''
+          alt={this.props.album_name}
         />
       </div >
     )

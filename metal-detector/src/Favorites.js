@@ -5,8 +5,10 @@ function Favorites(props) {
 	const verified = useRef(props.location.state.verified);
 	if (verified.current) {
 		return (
-			<div id="welcomeMessage">
-				{`Welcome ${props.location.state.username}`}
+			<div id="welcomeMessage" class="middle">
+				<h1>
+					{`Welcome ${props.location.state.username}`}
+				</h1>
 			</div>
 		)
 	} else {
