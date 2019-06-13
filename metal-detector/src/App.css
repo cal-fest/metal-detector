@@ -4,6 +4,11 @@ body {
   margin: 0;
   padding: 0;
 }
+/* ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+  font-family : "Germania One";
+  font-size: 1rem;
+} */
 button {
   margin: 4px;
   font-family : inherit;
