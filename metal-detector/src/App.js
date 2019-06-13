@@ -29,7 +29,7 @@ class App extends Component {
     const albumCovers = this.state.dbData;
     return (
       <div className="main">
-        <Nav />
+        {/* <Nav /> */}
         <DisplayMain albumCovers={albumCovers} />
       </div>
     )

@@ -6,11 +6,13 @@ import Login from './Login';
 import Signout from './Signout';
 import Signup from './Signup'
 import './App.css';
+import Nav from './Nav';
 class Root extends Component {
 	render() {
 		return (
 			<div>
 				<Router>
+					<Nav />
 					<Switch>
 						<Route exact path="/" component={App} />
 						<Route path="/myfavorites" component={Favorites} />
