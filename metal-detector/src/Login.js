@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
+import Nav from './Nav';
 
 class Login extends Component {
 	state = {

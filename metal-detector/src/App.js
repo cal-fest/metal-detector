@@ -8,7 +8,6 @@ const axios = require('axios');
 class App extends Component {
   state = {
     dbData: [],
-    eightData: []
   }
 
   componentDidMount() {

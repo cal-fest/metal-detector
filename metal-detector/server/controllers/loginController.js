@@ -2,7 +2,6 @@ const createDB = require('../models/dbModel');
 
 module.exports = {
   verifyUser: (req, res, next) => {
-    console.log('in Verify user')
     const pool = createDB();
     const verifyUserQuery = 'SELECT username, password FROM users_table WHERE username=$1 AND password=$2';
     const verifyUserArray = [req.body.username, req.body.password];
