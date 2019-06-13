@@ -101,13 +101,20 @@ class AlbumBox extends React.Component {
   // }
   render() {
     return (
-      <div className="album-art" >
-        <img
-          className="fill"
-          src={this.props.src}
-          onMouseDown={(e) => this.handleClick(e)}
-          alt={this.props.album_name}
-        />
+      <div className="album-art flip-card" >
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img
+              className="fill"
+              src={this.props.src}
+              onMouseDown={(e) => this.handleClick(e)}
+              alt={this.props.album_name}
+            />
+          </div>
+          <div className="flip-card-back">
+            <p>help!</p>
+          </div>
+        </div>
       </div >
     )
   }
