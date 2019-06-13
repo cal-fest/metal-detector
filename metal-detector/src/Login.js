@@ -73,15 +73,21 @@ class Login extends Component {
 		}
 		return (
 			< div >
-				<div className="login">
+				<div className="login middle">
 					<form onSubmit={this.handleSubmit}>
-						<label>Username</label>
-						<input id="username" type="text" placeholder="user" onChange={this.handleUserChange}></input>
-						<label>Password</label>
-						<input id="password" type="password" placeholder="password" onChange={this.handlePassChange}></input>
+						<label>Username </label>
+						<input id="username" style={{
+							display: 'inline-block', height: '30px', width: '300px'
+						}} type="text" placeholder="Who are you?!" onChange={this.handleUserChange} autofocus="true"></input>
+						< br />
+						<label>Password </label>
+						<input id="password" style={{ display: 'inline-block', width: '300px', height: '30px', }} type="password" placeholder="What" onChange={this.handlePassChange} ></input>
+						<br />
+						<br />
+						<button id="loginButton" style={{ display: 'inline-block', width: '100px', height: '30px' }} onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
+						<br />
+						<button id="signupButton" style={{ display: 'inline-block', width: '100px', height: '30px' }} onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
 					</form>
-					<button id="loginButton" onClick={(e) => { e.preventDefault(); this.verifyLogin(this.state.username, this.state.password) }}>Login</button>
-					<button id="signupButton" onClick={(e) => { e.preventDefault(); this.redirectToSignup() }}>Signup</button>
 				</div>
 			</div >
 		)
