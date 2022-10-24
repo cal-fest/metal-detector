@@ -8,6 +8,7 @@ import Signup from './Signup'
 import './App.css';
 import Nav from './Nav';
 
+const hi = 'hi'
 const Root = () => {
 	return (
 		<div>
